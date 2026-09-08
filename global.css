@@ -9,21 +9,21 @@
    ------------------------------------------------------------------------- */
 :root {
   /* Paleta: azul-confiança de chaveiro + dourado de chave pros destaques. */
-  --cor-primaria: #10315a;          /* azul-marinho — nav, títulos, rodapé */
-  --cor-primaria-escura: #0a2140;
-  --cor-destaque: #f5a623;          /* dourado/âmbar — botões e chamadas */
-  --cor-destaque-escura: #d98a06;
-  --cor-whatsapp: #25d366;
-  --cor-whatsapp-escura: #1da851;
+  --cor-primaria: rgba(16, 49, 90, 1);          /* azul-marinho — nav, títulos, rodapé */
+  --cor-primaria-escura: rgba(10, 33, 64, 1);
+  --cor-destaque: rgba(245, 166, 35, 1);          /* dourado/âmbar — botões e chamadas */
+  --cor-destaque-escura: rgba(217, 138, 6, 1);
+  --cor-whatsapp: rgba(37, 211, 102, 1);
+  --cor-whatsapp-escura: rgba(29, 168, 81, 1);
 
-  --cor-fundo: #ffffff;
-  --cor-fundo-alternada: #f4f6fa;   /* seções intercaladas */
-  --cor-cartao: #ffffff;
-  --cor-borda: #e2e8f0;
+  --cor-fundo: rgba(255, 255, 255, 1);
+  --cor-fundo-alternada: rgba(244, 246, 250, 1);   /* seções intercaladas */
+  --cor-cartao: rgba(255, 255, 255, 1);
+  --cor-borda: rgba(226, 232, 240, 1);
 
-  --cor-texto: #16233a;
-  --cor-texto-suave: #5a6678;
-  --cor-texto-claro: #ffffff;
+  --cor-texto: rgba(22, 35, 58, 1);
+  --cor-texto-suave: rgba(90, 102, 120, 1);
+  --cor-texto-claro: rgba(255, 255, 255, 1);
 
   /* Espaçamentos e medidas. */
   --largura-maxima: 72rem;          /* 1152px — largura do conteúdo */
