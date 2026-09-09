@@ -8,30 +8,43 @@
    Variáveis de tema — trocar aqui muda o site inteiro.
    ------------------------------------------------------------------------- */
 :root {
-  /* Paleta: azul-confiança de chaveiro + dourado de chave pros destaques. */
-  --cor-primaria: rgba(16, 49, 90, 1);          /* azul-marinho — nav, títulos, rodapé */
-  --cor-primaria-escura: rgba(10, 33, 64, 1);
-  --cor-destaque: rgba(245, 166, 35, 1);          /* dourado/âmbar — botões e chamadas */
-  --cor-destaque-escura: rgba(217, 138, 6, 1);
-  --cor-whatsapp: rgba(37, 211, 102, 1);
-  --cor-whatsapp-escura: rgba(29, 168, 81, 1);
+  /* Identidade da marca (brand book 2025): vermelho + preto + cinza.
+     Camada 1 — as cores cruas, com o nome/Pantone de origem. */
+  --vermelho: rgba(228, 0, 43, 1);              /* PANTONE 185 C · #E4002B */
+  --vermelho-escuro: rgba(190, 0, 34, 1);       /* estados hover/pressionado */
+  --preto: rgba(45, 41, 38, 1);                 /* PANTONE Black C · #2D2926 */
+  --preto-forte: rgba(26, 23, 21, 1);
+  --cinza: rgba(136, 139, 141, 1);              /* PANTONE Cool Gray 8 C · #888B8D */
+  --branco: rgba(255, 255, 255, 1);
+  --giz: rgba(245, 246, 247, 1);                /* fundo claro das seções alternadas */
+  --cinza-borda: rgba(224, 226, 228, 1);
+  --verde-whatsapp: rgba(37, 211, 102, 1);      /* cor da plataforma, fora da marca */
+  --verde-whatsapp-escuro: rgba(29, 168, 81, 1);
 
-  --cor-fundo: rgba(255, 255, 255, 1);
-  --cor-fundo-alternada: rgba(244, 246, 250, 1);   /* seções intercaladas */
-  --cor-cartao: rgba(255, 255, 255, 1);
-  --cor-borda: rgba(226, 232, 240, 1);
+  /* Camada 2 — os PAPÉIS (o resto do CSS usa só estes). */
+  --cor-primaria: var(--preto);                 /* nav-texto, títulos, seções escuras */
+  --cor-primaria-escura: var(--preto-forte);
+  --cor-destaque: var(--vermelho);              /* botões e chamadas */
+  --cor-destaque-escura: var(--vermelho-escuro);
+  --cor-whatsapp: var(--verde-whatsapp);
+  --cor-whatsapp-escura: var(--verde-whatsapp-escuro);
 
-  --cor-texto: rgba(22, 35, 58, 1);
-  --cor-texto-suave: rgba(90, 102, 120, 1);
-  --cor-texto-claro: rgba(255, 255, 255, 1);
+  --cor-fundo: var(--branco);
+  --cor-fundo-alternada: var(--giz);            /* seções intercaladas */
+  --cor-cartao: var(--branco);
+  --cor-borda: var(--cinza-borda);
+
+  --cor-texto: var(--preto);
+  --cor-texto-suave: var(--cinza);
+  --cor-texto-claro: var(--branco);
 
   /* Espaçamentos e medidas. */
   --largura-maxima: 72rem;          /* 1152px — largura do conteúdo */
   --espaco-secao: 3.5rem;           /* respiro vertical entre seções */
   --raio-borda: 0.75rem;
   --raio-borda-grande: 1.25rem;
-  --sombra-suave: 0 1px 3px rgba(16, 49, 90, .08), 0 4px 16px rgba(16, 49, 90, .06);
-  --sombra-realce: 0 8px 28px rgba(16, 49, 90, .16);
+  --sombra-suave: 0 1px 3px rgba(45, 41, 38, .08), 0 4px 16px rgba(45, 41, 38, .06);
+  --sombra-realce: 0 8px 28px rgba(45, 41, 38, .16);
 
   --fonte-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --transicao: .2s ease;
@@ -85,35 +98,51 @@ nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--cor-primaria);
+  background: var(--cor-primaria);             /* nav PRETA — o logo é a versão pra fundo escuro */
+  border-bottom: 3px solid var(--cor-destaque);   /* fita vermelha da marca */
   box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;                     /* celular: logo em cima, menu embaixo */
+  gap: .35rem 1.5rem;
+  padding: .5rem 1rem;
+}
+
+/* marca (logo) do cabeçalho */
+.marca {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.marca img {
+  height: 2.8rem;                              /* o tamanho do logo se controla pela altura */
+  width: auto;
 }
 
 nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: .25rem;
   align-items: center;
-  max-width: var(--largura-maxima);
-  margin: 0 auto;
-  padding: .5rem .75rem;
+  gap: .25rem;
 }
 
-nav a {
+nav ul a {
   display: block;
   white-space: nowrap;
-  padding: .55rem .8rem;
+  padding: .5rem .7rem;
   border-radius: .5rem;
-  color: var(--cor-texto-claro);
+  color: var(--cor-texto-claro);               /* branco no fundo preto */
   font-weight: 600;
   font-size: .95rem;
   text-transform: capitalize;
-  transition: background var(--transicao);
+  transition: color var(--transicao), background var(--transicao);
 }
-nav a:hover,
-nav a:focus-visible {
-  background: rgba(255, 255, 255, .14);
+nav ul a:hover,
+nav ul a:focus-visible {
+  color: var(--cor-destaque);                  /* vermelho da marca no hover */
+  background: rgba(255, 255, 255, .1);
 }
 
 /* -------------------------------------------------------------------------
@@ -126,7 +155,7 @@ nav a:focus-visible {
   gap: .5rem;
   padding: .95rem 1.6rem;
   background: var(--cor-destaque);
-  color: var(--cor-primaria-escura);
+  color: var(--cor-texto-claro);              /* branco sobre o vermelho */
   font-weight: 800;
   font-size: 1.05rem;
   border-radius: 999px;
@@ -176,7 +205,7 @@ nav a:focus-visible {
   padding-bottom: var(--espaco-secao);
   text-align: center;
   background:
-    radial-gradient(120% 90% at 50% -10%, rgba(245, 166, 35, .12), transparent 60%),
+    radial-gradient(120% 90% at 50% -10%, rgba(228, 0, 43, .08), transparent 60%),
     linear-gradient(180deg, var(--cor-fundo), var(--cor-fundo-alternada));
 }
 #inicio h1 {
@@ -367,7 +396,9 @@ footer a { color: var(--cor-destaque); font-weight: 700; }
 @media (min-width: 40rem) {
   :root { --espaco-secao: 4.5rem; }
 
-  nav a { font-size: 1rem; }
+  nav { justify-content: space-between; flex-wrap: nowrap; }  /* logo à esquerda, menu à direita */
+  nav ul a { font-size: 1rem; }
+  .marca img { height: 3.2rem; }
 
   #servicos ul,
   #avaliacoes ul { grid-template-columns: repeat(2, 1fr); }
@@ -382,13 +413,13 @@ footer a { color: var(--cor-destaque); font-weight: 700; }
   #servicos ul,
   #avaliacoes ul { grid-template-columns: repeat(3, 1fr); }
 
-  .botao-whatsapp-flutuante {
+  #botao_flutuante_pro_whatsapp {
     right: 2rem;
     bottom: 2rem;
     width: 4rem;
     height: 4rem;
   }
-  .botao-whatsapp-flutuante svg { width: 2rem; height: 2rem; }
+  #botao_flutuante_pro_whatsapp svg { width: 2rem; height: 2rem; }
 }
 
 /* Respeita quem pediu menos animação no sistema. */
