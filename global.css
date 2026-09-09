@@ -154,6 +154,7 @@ nav a:focus-visible {
   align-items: center;
   justify-content: center;
   background: var(--cor-whatsapp);
+  color: var(--cor-texto-claro);    /* o ícone SVG herda esta cor via currentColor */
   border-radius: 999px;
   box-shadow: var(--sombra-realce);
   transition: transform var(--transicao), background var(--transicao);
@@ -163,7 +164,11 @@ nav a:focus-visible {
   background: var(--cor-whatsapp-escura);
   transform: scale(1.08);
 }
-.botao-whatsapp-flutuante img { width: 1.75rem; height: 1.75rem; }
+.botao-whatsapp-flutuante svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: currentColor;               /* pinta com a cor do link (branco) */
+}
 
 /* -------------------------------------------------------------------------
    #inicio — hero
@@ -386,7 +391,7 @@ footer a { color: var(--cor-destaque); font-weight: 700; }
     width: 4rem;
     height: 4rem;
   }
-  .botao-whatsapp-flutuante img { width: 2rem; height: 2rem; }
+  .botao-whatsapp-flutuante svg { width: 2rem; height: 2rem; }
 }
 
 /* Respeita quem pediu menos animação no sistema. */
