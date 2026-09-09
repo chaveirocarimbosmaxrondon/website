@@ -1,0 +1,401 @@
+/* =========================================================================
+   Chaveiro e Carimbos Max Rondon — folha de estilo (esboço, mobile-first)
+   Escrita sobre o reset.css. Nomes em pt-BR, por extenso (padrão do cliente).
+   Estratégia: estilo base = celular; @media sobe pra tablet e desktop.
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   Variáveis de tema — trocar aqui muda o site inteiro.
+   ------------------------------------------------------------------------- */
+:root {
+  /* Paleta: azul-confiança de chaveiro + dourado de chave pros destaques. */
+  --cor-primaria: rgba(16, 49, 90, 1);          /* azul-marinho — nav, títulos, rodapé */
+  --cor-primaria-escura: rgba(10, 33, 64, 1);
+  --cor-destaque: rgba(245, 166, 35, 1);          /* dourado/âmbar — botões e chamadas */
+  --cor-destaque-escura: rgba(217, 138, 6, 1);
+  --cor-whatsapp: rgba(37, 211, 102, 1);
+  --cor-whatsapp-escura: rgba(29, 168, 81, 1);
+
+  --cor-fundo: rgba(255, 255, 255, 1);
+  --cor-fundo-alternada: rgba(244, 246, 250, 1);   /* seções intercaladas */
+  --cor-cartao: rgba(255, 255, 255, 1);
+  --cor-borda: rgba(226, 232, 240, 1);
+
+  --cor-texto: rgba(22, 35, 58, 1);
+  --cor-texto-suave: rgba(90, 102, 120, 1);
+  --cor-texto-claro: rgba(255, 255, 255, 1);
+
+  /* Espaçamentos e medidas. */
+  --largura-maxima: 72rem;          /* 1152px — largura do conteúdo */
+  --espaco-secao: 3.5rem;           /* respiro vertical entre seções */
+  --raio-borda: 0.75rem;
+  --raio-borda-grande: 1.25rem;
+  --sombra-suave: 0 1px 3px rgba(16, 49, 90, .08), 0 4px 16px rgba(16, 49, 90, .06);
+  --sombra-realce: 0 8px 28px rgba(16, 49, 90, .16);
+
+  --fonte-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --transicao: .2s ease;
+}
+
+/* -------------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  /* compensa a nav fixa ao pular pra uma âncora (#servicos etc.) */
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  font-family: var(--fonte-base);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  line-height: 1.55;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* Envelope de conteúdo reutilizável: centraliza e limita a largura. */
+section,
+footer {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+section > *,
+footer > * {
+  max-width: var(--largura-maxima);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2, h3 {
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--cor-primaria);
+  letter-spacing: -.01em;
+}
+
+/* -------------------------------------------------------------------------
+   Navegação — barra fixa no topo; menu rola na horizontal no celular.
+   ------------------------------------------------------------------------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cor-primaria);
+  box-shadow: var(--sombra-suave);
+}
+
+nav ul {
+  display: flex;
+  gap: .25rem;
+  align-items: center;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: .5rem .75rem;
+  overflow-x: auto;                 /* rola em vez de quebrar no celular */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+nav ul::-webkit-scrollbar { display: none; }
+
+nav a {
+  display: block;
+  white-space: nowrap;
+  padding: .55rem .8rem;
+  border-radius: .5rem;
+  color: var(--cor-texto-claro);
+  font-weight: 600;
+  font-size: .95rem;
+  text-transform: capitalize;
+  transition: background var(--transicao);
+}
+nav a:hover,
+nav a:focus-visible {
+  background: rgba(255, 255, 255, .14);
+}
+
+/* -------------------------------------------------------------------------
+   Botões (chamadas para ação)
+   ------------------------------------------------------------------------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .95rem 1.6rem;
+  background: var(--cor-destaque);
+  color: var(--cor-primaria-escura);
+  font-weight: 800;
+  font-size: 1.05rem;
+  border-radius: 999px;
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicao), background var(--transicao), box-shadow var(--transicao);
+}
+.botao:hover,
+.botao:focus-visible {
+  background: var(--cor-destaque-escura);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-realce);
+}
+
+/* WhatsApp flutuante — sempre acessível, canto inferior direito. */
+#botao_flutuante_pro_whatsapp {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cor-whatsapp);
+  color: var(--cor-texto-claro);    /* o ícone SVG herda esta cor via currentColor */
+  border-radius: 999px;
+  box-shadow: var(--sombra-realce);
+  transition: transform var(--transicao), background var(--transicao);
+}
+#botao_flutuante_pro_whatsapp:hover,
+#botao_flutuante_pro_whatsapp:focus-visible {
+  background: var(--cor-whatsapp-escura);
+  transform: scale(1.08);
+}
+#botao_flutuante_pro_whatsapp svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: currentColor;               /* pinta com a cor do link (branco) */
+}
+
+/* -------------------------------------------------------------------------
+   #inicio — hero
+   ------------------------------------------------------------------------- */
+#inicio {
+  padding-top: var(--espaco-secao);
+  padding-bottom: var(--espaco-secao);
+  text-align: center;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(245, 166, 35, .12), transparent 60%),
+    linear-gradient(180deg, var(--cor-fundo), var(--cor-fundo-alternada));
+}
+#inicio h1 {
+  font-size: clamp(1.9rem, 7vw, 3.25rem);
+  margin-bottom: 1rem;
+}
+#inicio p { color: var(--cor-texto-suave); }
+#inicio p span {
+  display: block;
+  font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+#inicio p span + span { color: var(--cor-destaque-escura); }
+#inicio > p:last-of-type {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+/* -------------------------------------------------------------------------
+   #contato — telefone grande, endereço, mapa e chamada
+   ------------------------------------------------------------------------- */
+#contato {
+  padding-top: var(--espaco-secao);
+  padding-bottom: var(--espaco-secao);
+}
+#contato > * { text-align: center; }
+#contato p:first-child a {
+  display: inline-block;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 800;
+  color: var(--cor-primaria);
+}
+#contato p a { text-decoration: none; }
+#contato p:nth-of-type(2) {
+  margin: .75rem auto 1.5rem;
+  color: var(--cor-texto-suave);
+  max-width: 34rem;
+}
+#contato img {
+  width: 100%;
+  max-width: 34rem;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-suave);
+  border: 1px solid var(--cor-borda);
+}
+#contato .botao { margin-top: 1.5rem; width: 100%; max-width: 22rem; }
+
+/* -------------------------------------------------------------------------
+   #servicos — grade de cartões (1 coluna no celular)
+   ------------------------------------------------------------------------- */
+#servicos {
+  padding-top: var(--espaco-secao);
+  padding-bottom: var(--espaco-secao);
+  background: var(--cor-fundo-alternada);
+}
+#servicos h2 {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  margin-bottom: 2rem;
+}
+#servicos ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+#servicos li {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+#servicos li:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-realce);
+}
+#servicos li img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+#servicos li p {
+  padding: 1rem 1.15rem 1.25rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+/* -------------------------------------------------------------------------
+   #sobre — bloco de texto
+   ------------------------------------------------------------------------- */
+#sobre {
+  padding-top: var(--espaco-secao);
+  padding-bottom: var(--espaco-secao);
+}
+#sobre p {
+  max-width: 44rem;
+  margin: 0 auto 1rem;
+  font-size: 1.1rem;
+  color: var(--cor-texto-suave);
+  text-align: center;
+}
+#sobre p:last-child {
+  font-weight: 700;
+  color: var(--cor-primaria);
+  font-size: 1.2rem;
+}
+
+/* -------------------------------------------------------------------------
+   #avaliacoes — depoimentos com tooltip "ver original"
+   ------------------------------------------------------------------------- */
+#avaliacoes {
+  padding-top: var(--espaco-secao);
+  padding-bottom: var(--espaco-secao);
+  background: var(--cor-primaria);
+}
+#avaliacoes h2 {
+  text-align: center;
+  color: var(--cor-texto-claro);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  margin-bottom: 2rem;
+}
+#avaliacoes ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+#avaliacoes li {
+  background: var(--cor-cartao);
+  border-radius: var(--raio-borda);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+#avaliacoes li::before {
+  content: "★★★★★";
+  color: var(--cor-destaque);
+  letter-spacing: .15em;
+  font-size: 1.1rem;
+}
+#avaliacoes h3 {
+  font-size: 1.05rem;
+  color: var(--cor-primaria);
+}
+/* tooltip "ver original" ao passar o mouse no nome (desktop) */
+#avaliacoes h3[data-tooltip] { position: relative; cursor: help; }
+#avaliacoes h3[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 0;
+  bottom: 125%;
+  white-space: nowrap;
+  background: var(--cor-primaria-escura);
+  color: var(--cor-texto-claro);
+  font-size: .72rem;
+  font-weight: 600;
+  padding: .25rem .5rem;
+  border-radius: .35rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transicao);
+}
+#avaliacoes h3[data-tooltip]:hover::after { opacity: 1; }
+#avaliacoes blockquote p {
+  color: var(--cor-texto);
+  font-style: italic;
+}
+
+/* -------------------------------------------------------------------------
+   Rodapé
+   ------------------------------------------------------------------------- */
+footer {
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  background: var(--cor-primaria-escura);
+  color: rgba(255, 255, 255, .8);
+  font-size: .9rem;
+}
+footer a { color: var(--cor-destaque); font-weight: 700; }
+
+/* =========================================================================
+   Tablet — a partir de ~40rem (640px)
+   ========================================================================= */
+@media (min-width: 40rem) {
+  :root { --espaco-secao: 4.5rem; }
+
+  nav ul { justify-content: center; overflow-x: visible; }
+  nav a { font-size: 1rem; }
+
+  #servicos ul,
+  #avaliacoes ul { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================================================================
+   Desktop — a partir de ~64rem (1024px)
+   ========================================================================= */
+@media (min-width: 64rem) {
+  :root { --espaco-secao: 6rem; }
+
+  #servicos ul,
+  #avaliacoes ul { grid-template-columns: repeat(3, 1fr); }
+
+  .botao-whatsapp-flutuante {
+    right: 2rem;
+    bottom: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+  .botao-whatsapp-flutuante svg { width: 2rem; height: 2rem; }
+}
+
+/* Respeita quem pediu menos animação no sistema. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
