@@ -406,6 +406,15 @@ nav ul a:focus-visible {
   color: var(--cor-texto);
   font-style: italic;
 }
+#avaliacoes .avaliacao-meta {
+  color: var(--cor-texto-suave);
+  font-size: .82rem;
+  margin-top: -.4rem;                /* cola no nome */
+}
+#avaliacoes .avaliacao-reacao {
+  font-size: 1.15rem;
+  margin-top: auto;                  /* empurra a reação pro rodapé do cartão */
+}
 
 /* -------------------------------------------------------------------------
    Rodapé
