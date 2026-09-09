@@ -91,16 +91,14 @@ nav {
 
 nav ul {
   display: flex;
+  flex-wrap: wrap;                  /* quebra em linhas em vez de rolar — zero barra horizontal */
+  justify-content: center;
   gap: .25rem;
   align-items: center;
   max-width: var(--largura-maxima);
   margin: 0 auto;
   padding: .5rem .75rem;
-  overflow-x: auto;                 /* rola em vez de quebrar no celular */
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
 }
-nav ul::-webkit-scrollbar { display: none; }
 
 nav a {
   display: block;
@@ -369,7 +367,6 @@ footer a { color: var(--cor-destaque); font-weight: 700; }
 @media (min-width: 40rem) {
   :root { --espaco-secao: 4.5rem; }
 
-  nav ul { justify-content: center; overflow-x: visible; }
   nav a { font-size: 1rem; }
 
   #servicos ul,
