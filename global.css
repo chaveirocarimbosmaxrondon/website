@@ -104,7 +104,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;                     /* celular: logo em cima, menu embaixo */
+  justify-content: space-between;              /* celular: logo à esquerda, botão à direita */
   gap: .35rem 1.5rem;
   padding: .5rem 1rem;
 }
@@ -127,6 +127,35 @@ nav ul {
   align-items: center;
   gap: .25rem;
 }
+
+/* Botão do menu-sanduíche — escondido por padrão. Sem JS, o menu aparece
+   normal (degradação graciosa); o menu.js adiciona .com-js e aí ele surge. */
+.abre-menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: transparent;
+  border-radius: .5rem;
+  color: var(--cor-texto-claro);
+  cursor: pointer;
+}
+.abre-menu:hover,
+.abre-menu:focus-visible { background: rgba(255, 255, 255, .1); }
+.abre-menu svg { width: 1.6rem; height: 1.6rem; }
+
+/* Com JS ativo, no celular: mostra o botão e recolhe o menu num painel. */
+nav.com-js .abre-menu { display: inline-flex; }
+nav.com-js ul {
+  display: none;
+  flex-basis: 100%;                  /* ocupa a linha inteira quando abre */
+  flex-direction: column;
+  text-align: center;
+  gap: .1rem;
+  padding-bottom: .4rem;
+}
+nav.com-js[data-menu="aberto"] ul { display: flex; }
 
 nav ul a {
   display: block;
@@ -396,9 +425,19 @@ footer a { color: var(--cor-destaque); font-weight: 700; }
 @media (min-width: 40rem) {
   :root { --espaco-secao: 4.5rem; }
 
-  nav { justify-content: space-between; flex-wrap: nowrap; }  /* logo à esquerda, menu à direita */
+  nav { flex-wrap: nowrap; }                   /* logo à esquerda, menu à direita */
   nav ul a { font-size: 1rem; }
   .marca img { height: 3.2rem; }
+
+  /* no desktop não há sanduíche: some o botão e o menu volta a ser linha */
+  nav.com-js .abre-menu { display: none; }
+  nav.com-js ul {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    text-align: left;
+    padding-bottom: 0;
+  }
 
   #servicos ul,
   #avaliacoes ul { grid-template-columns: repeat(2, 1fr); }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="global.css" />
+    <script src="menu.js" defer></script>
     <title>Max Rondon</title>
   </head>
   <body>
@@ -12,7 +13,12 @@
       <a class="marca" href="#inicio" aria-label="Chaveiro e Carimbos Max Rondon — ir ao início">
         <img src="recursos/logo.png" alt="Chaveiro e Carimbos Max Rondon" />
       </a>
-      <ul>
+      <button class="abre-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+      </button>
+      <ul id="menu-principal">
         <li><a href="#inicio">
           início
         </a></li>
