@@ -261,6 +261,9 @@ nav ul a:focus-visible {
 #contato {
   padding-top: var(--espaco-secao);
   padding-bottom: var(--espaco-secao);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #contato > * { text-align: center; }
 #contato p:first-child a {

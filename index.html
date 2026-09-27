@@ -10,64 +10,102 @@
   </head>
   <body>
     <nav>
-      <a class="marca" href="#inicio" aria-label="Chaveiro e Carimbos Max Rondon — ir ao início">
-        <img src="recursos/logo.png" alt="Chaveiro e Carimbos Max Rondon" />
+      <a href="#inicio"
+      class="marca"
+      aria-label="Chaveiro e Carimbos Max Rondon — ir ao início"
+      >
+        <img src="recursos/logo.png"
+        alt="Chaveiro e Carimbos Max Rondon"
+        >
       </a>
-      <button class="abre-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
+      <button type="button"
+      class="abre-menu"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="menu-principal"
+      >
+        <svg viewBox="0 0 24 24"
+        aria-hidden="true"
+        >
           <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
         </svg>
       </button>
       <ul id="menu-principal">
-        <li><a href="#inicio">
-          início
-        </a></li>
-        <li class="contato"><a href="#contato">
-          como chegar
-        </a></li>
-        <li class="servicos"><a href="#servicos">
-          serviços e produtos
-        </a></li>
-        <li class="sobre"><a href="#sobre">
-          sobre nós
-        </a></li>
-        <li class="avaliacoes"><a href="#avaliacoes">
-          clientes satisfeitos
-        </a></li>
+        <li>
+          <a href="#inicio">
+            início
+          </a>
+        </li>
+        <li class="contato">
+          <a href="#contato">
+            como chegar
+          </a>
+        </li>
+        <li class="servicos">
+          <a href="#servicos">
+            serviços e produtos
+          </a>
+        </li>
+        <li class="sobre">
+          <a href="#sobre">
+            sobre nós
+          </a>
+        </li>
+        <li class="avaliacoes">
+          <a href="#avaliacoes">
+            clientes satisfeitos
+          </a>
+        </li>
       </ul>
     </nav>
-    <a
-      href="https://wa.me/5569992534517"
-      class="whatsapp"
-      id="botao_flutuante_pro_whatsapp"
-      aria-label="falar no WhatsApp"
-      target="_blank"
-      rel="noreferrer noopener nofollow"
+    <a href="https://wa.me/5569992534517"
+    class="whatsapp"
+    id="botao_flutuante_pro_whatsapp"
+    aria-label="falar no WhatsApp"
+    target="_blank"
+    rel="noreferrer noopener nofollow"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M.06 24l1.68-6.13A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.13c1.66.99 3.25 1.58 5.35 1.58 5.45 0 9.89-4.43 9.89-9.88 0-5.46-4.42-9.89-9.88-9.89-5.46 0-9.89 4.43-9.89 9.89 0 2.2.64 3.85 1.72 5.58l-.99 3.62 3.8-.9zM17.94 14.7c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42z"/>
+      <svg viewBox="0 0 24 24"
+      aria-hidden="true"
+      >
+        <path d="M.06 24l1.68-6.13A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.13c1.66.99 3.25 1.58 5.35 1.58 5.45 0 9.89-4.43 9.89-9.88 0-5.46-4.42-9.89-9.88-9.89-5.46 0-9.89 4.43-9.89 9.89 0 2.2.64 3.85 1.72 5.58l-.99 3.62 3.8-.9zM17.94 14.7c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42z"></path>
       </svg> 
     </a>
     <section id="inicio">
       <h1>Chaveiro e Carimbos Max Rondon</h1>
       <p>
         <span>Chaveiro 24 horas</span>
-        <br />
+        <br>
         <span>Confecção de carimbos</span>
       </p>
       <p>Experiência e agilidade</p>
     </section>
     <section id="contato">
-      <p><a href="https://wa.me/5569992534517">
+      <p><a href="https://wa.me/5569992534517"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      >
         +55 (69) 99253-4517
       </p>
-      <p><a href="https://www.google.com/maps/search/?api=1&query=Rua%20Menezes%20Filho%2C%202689%20-%20Dois%20de%20Abril%2C%20Ji-Paran%C3%A1%20-%20RO">
+      <p><a href="https://www.google.com/maps/search/?api=1&query=Rua%20Menezes%20Filho%2C%202689%20-%20Dois%20de%20Abril%2C%20Ji-Paran%C3%A1%20-%20RO"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      >
         Rua Menezes Filho, 2689, Sala 02 — Bairro Dois de Abril, Ji-Paraná/RO — CEP 76900-811
       </a></p>
-      <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Menezes%20Filho%2C%202689%20-%20Dois%20de%20Abril%2C%20Ji-Paran%C3%A1%20-%20RO">
-        <img src="recursos/mapa.png" alt="mapa do Chaveiro e Carimbos Max Rondon">
+      <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Menezes%20Filho%2C%202689%20-%20Dois%20de%20Abril%2C%20Ji-Paran%C3%A1%20-%20RO"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      >
+        <img src="recursos/mapa.png"
+        alt="mapa do Chaveiro e Carimbos Max Rondon"
+        >
       </a>
-      <a class="botao" href="https://wa.me/5569992534517?text=Oi%20%F0%9F%99%82%0A%0AQuero%20conhecer%20a%20loja" target="_blank" rel="noopener noreferrer nofollow">
+      <a href="https://api.whatsapp.com/send?phone=5569992534517&amp;text=Oi%20%F0%9F%99%82%0A%0AQuero%20conhecer%20a%20loja"
+      class="botao"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      >
         QUERO CONHECER
       </a>
     </section>
@@ -77,37 +115,41 @@
       </h2>
       <ul>
         <li>
-          <img src="recursos/fachada.png" alt="imagem descritiva do produto listado">
+          <img src="recursos/servicos_chaveiro.png"
+          alt="uma mão com uma chave numa fechadura de casa e uma mão com uma chave na mão numa de fechadura de carro"
+          >
           <p>
             Chaveiro 24 horas por dia de domingo a domingo
           </p>
         </li>
         <li>
-          <img src="recursos/fachada.png" alt="imagem descritiva do produto listado">
+          <img src="recursos/servicos_abertura.png"
+          alt="pessoa com duas ferramentas de abertura de fechaduras abrindo uma porta"
+          >
           <p>
             Abertura de portas e veículos
           </p>
         </li>
         <li>
-          <img src="recursos/fachada.png" alt="imagem descritiva do produto listado">
+          <img src="recursos/servicos_copia.jpg"
+          alt="ferramenta de corte cortando a cópia de uma chave"
+          >
           <p>
             Cópia de chaves
           </p>
         </li>
         <li>
-          <img src="recursos/fachada.png" alt="imagem descritiva do produto listado" />
+          <img src="recursos/servicos_reparo.jpg"
+          alt="pessoa segurando maçaneta de porta com uma mão e apoiando ela com a outra"
+          >
           <p>
             Troca e reparo de fechaduras
           </p>
         </li>
         <li>
-          <img src="recursos/fachada.png" alt="imagem descritiva do produto listado" />
-          <p>
-            Cadeados
-          </p>
-        </li>
-        <li>
-          <img src="recursos/fachada.png" alt="imagem descritiva do produto listado" />
+          <img src="recursos/servicos_insumos_para_carimbos.jpg"
+          alt="carimbos, tinta e almofadas sobre uma bancada"
+          >
           <p>
             Refis, almofadas e tinta para carimbos
           </p>
@@ -131,59 +173,150 @@
       </h2>
       <ul>
         <li>
-          <h3>Elias Santos</h3>
-          <p class="avaliacao-meta">Local Guide · 60 avaliações · 110 fotos · há 2 anos</p>
-          <blockquote>
-            <p>O melhor chaveiro da região, não só chaves, carimbo também. Atendimento 24 horas. Ótimo atendimento e rapidez.</p>
+          <a href="https://share.google/27x2z66nDqjRYMG7h"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          >
+            <h3 data-conteudo_balao_contexto="ver original">
+              Elias Santos
+            </h3>
+          </a>
+          <p>Guia local do Google · 13/10/2023</p>
+          <blockquote
+            data-texto_original="O melhor chaveiro da região, não só chaves, carimbo também. Atendimento 24 horas. Ótimo atendimento e rapidez"
+          >
+            <p>
+              O melhor chaveiro da região. Não só chaves, como carimbos também. Atendimento 24 horas. Ótimo atendimento e muito rápido.
+            </p>
           </blockquote>
-          <p class="avaliacao-reacao">🙏</p>
+          <p class="reacao">🙏</p>
+          <p class="resposta">
+            
+          </p>
         </li>
         <li>
-          <h3>day2dreams</h3>
-          <p class="avaliacao-meta">Local Guide · 171 avaliações · 145 fotos · há 3 anos</p>
-          <blockquote>
-            <p>Serviço rápido e eficiente! Precisei de abrir uma porta dentro de casa e a chave + abrir ficou 70 reais. Recomendo!</p>
+          <a href="https://share.google/b9x5HlG8NupiIlST7"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          >
+            <h3 data-conteudo_balao_contexto="ver original">
+              Aniel Sales
+            </h3>
+          </a>
+          <p>Guia local do Google · 13/10/2023</p>
+          <blockquote
+            data-texto_original="OBRIGADO! excelente atendimento. Precisamos estava lá, não importa horário muito agradecido , muito satisfeito pelo atendimento."
+          >
+            <p>
+              OBRIGADO! Excelente atendimento! Quando precisamos eles estavam lá. Não importa o horário. Muito agradecido e satisfeito pelo atendimento.
+            </p>
           </blockquote>
-          <p class="avaliacao-reacao">🙏</p>
+          <p class="reacao">🙏</p>
+          <p class="resposta">
+            
+          </p>
         </li>
         <li>
-          <h3>Bruna Bartnik</h3>
-          <p class="avaliacao-meta">Local Guide · 15 avaliações · 7 fotos · há 3 anos</p>
-          <blockquote>
-            <p>Único que eu liguei e fui atendida de madrugada. Rápido e ótimo profissional! 👏🏼</p>
+          <a href="https://share.google/uOjCak2gT06FL3kq4"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          >
+            <h3 data-conteudo_balao_contexto="ver original">
+              day2dreams
+            </h3>
+          </a>
+          <p>Guia local do Google · 11/04/2023</p>
+          <blockquote
+            data-texto_original="Serviço rápido e eficiente! Precisei de abrir uma porta dentro de casa e a chave + abrir ficou 70 reais. Recomendo!"
+          >
+            <p>
+              Serviço rápido e eficiente! Precisei abrir uma porta dentro de casa. O serviço completo ficou bem barato. Recomendo!
+            </p>
           </blockquote>
-          <p class="avaliacao-reacao">🙏</p>
+          <p class="reacao">🙏</p>
+          <p class="resposta">
+            
+          </p>
         </li>
         <li>
-          <h3>Aniel Sales</h3>
-          <p class="avaliacao-meta">Local Guide · 120 avaliações · 30 fotos · há 2 anos</p>
-          <blockquote>
-            <p>OBRIGADO! Excelente atendimento. Precisamos, estava lá — não importa o horário. Muito agradecido, muito satisfeito pelo atendimento.</p>
+          <a href="https://share.google/neK8QoW3X5KcyxtA1"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          >
+            <h3 data-conteudo_balao_contexto="ver original">
+              Léia Vieira
+            </h3>
+          </a>
+          <p>Guia local do Google · 25/07/2025</p>
+          <blockquote
+            data-texto_original="Atendimento com muita rapidez e eficiência!"
+          >
+            <p>
+              Atendimento prestado com muita rapidez e eficiência!"
+            </p>
           </blockquote>
-          <p class="avaliacao-reacao">🙏</p>
+          <!-- problema: emoji de coração não visível no editor de texto -->
+          <p class="reacao">❤️</p>
+          <p class="resposta">
+            
+          </p>
         </li>
         <li>
-          <h3>Abrahao Andrade</h3>
-          <p class="avaliacao-meta">Local Guide · 123 avaliações · 469 fotos · há 3 anos</p>
-          <blockquote>
-            <p>Serviço de qualidade, rápido e atendimento muito bom.</p>
+          <a href="https://share.google/RrLZ4hUkCNqR5bElc"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          >
+            <h3 data-conteudo_balao_contexto="ver original">
+              Geane Neves tavares
+            </h3>
+          </a>
+          <p>Guia local do Google · 02/09/2026</p>
+          <blockquote
+            data-texto_original="Trabalho muito bom super indico"
+          >
+            <p>
+              Trabalho muito bom! Super indico.
+            </p>
           </blockquote>
-          <p class="avaliacao-reacao">🙏</p>
+          <p class="reacao"></p>
+          <p class="resposta">
+            Obrigado!!!
+          </p>
         </li>
         <li>
-          <h3>Léia Vieira</h3>
-          <p class="avaliacao-meta">Local Guide · 19 avaliações · 9 fotos · há 1 ano</p>
-          <blockquote>
-            <p>Atendimento com muita rapidez e eficiência!</p>
+          <a href="https://share.google/0cWe9Z2XxQK4TNpvQ"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          >
+            <h3 data-conteudo_balao_contexto="ver original">
+              Bruna Bartnik
+            </h3>
+          </a>
+          <p>Guia local do Google · 05/11/2022</p>
+          <blockquote
+            data-texto_original="Único que eu liguei e fui atendida de madrugada. Rápido e ótimo profissional! 👏🏼"
+          >
+            <p>
+              Foi o único que me atendeu quando liguei de madrugada. Rápido e um ótimo profissional! 👏🏼
+            </p>
           </blockquote>
-          <p class="avaliacao-reacao">❤️</p>
+          <p class="reacao">🙏</p>
+          <p class="resposta">
+            Muito obrigado.
+            Sempre à disposição!!
+          </p>
         </li>
       </ul>
     </section>
     <footer>
       <p>
         feito com responsabilidade por
-        <strong><a href="https://thiagoribeirosilva.vercel.app">Thiago Ribeiro Silva</a></strong>
+        <strong><a href="https://thiagoribeirosilva.vercel.app"
+        target="_blank"
+        rel="noreferrer noopener nofollow"
+        >
+          Thiago Ribeiro Silva
+        </a></strong>
       </p>
     </footer>
   </body>

@@ -63,5 +63,6 @@
       "destination": "/esbocos/lip_chaves"
     }
   ],
-  "trailingSlash": false
+  "trailingSlash": false,
+  "outputDirectory": "."
 }
